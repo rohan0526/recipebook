@@ -1,0 +1,15 @@
+# Ignore environment variable file
+Backend/.env
+
+# Ignore test file
+Backend/test_api.py
+
+# Ignore virtual environment
+Backend/venv/
+
+Frontend/node_modules
+# Ignore build files
+Frontend/package-lock.json
+Frontend/package.json
+Frontend/postcss.config.js
+Frontend/tailwind.config.js

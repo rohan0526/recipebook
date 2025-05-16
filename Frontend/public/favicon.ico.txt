@@ -1,0 +1,4 @@
+This is a placeholder for favicon.ico
+
+For a production app, replace this txt file with an actual .ico file.
+You can generate one at https://favicon.io/ or similar sites.
