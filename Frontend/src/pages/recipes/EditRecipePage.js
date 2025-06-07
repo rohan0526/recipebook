@@ -21,7 +21,7 @@ const EditRecipePage = () => {
     ingredients: '',
     steps: '',
     image: null,
-    cookTime: '',
+    cooking_time: '',
     servings: '1-2',
     difficulty: 'easy'
   });
@@ -53,13 +53,13 @@ const EditRecipePage = () => {
         }
         
         // Parse cookTime if it exists (e.g. "30 mins" → "30")
-        let cookTime = '';
-        if (recipe.cookTime) {
-          const timeMatch = recipe.cookTime.match(/(\d+)/);
+        let cooking_time = '';
+        if (recipe.cooking_time) {
+          const timeMatch = recipe.cooking_time.match(/(\d+)/);
           if (timeMatch) {
-            cookTime = timeMatch[1];
+            cooking_time = timeMatch[1];
           } else {
-            cookTime = recipe.cookTime;
+            cooking_time = recipe.cooking_time;
           }
         }
         
@@ -70,7 +70,7 @@ const EditRecipePage = () => {
           ingredients: recipe.ingredients.join('\n'),
           steps: recipe.steps.join('\n'),
           image: null,
-          cookTime: cookTime,
+          cooking_time: cooking_time,
           servings: recipe.servings || '1-2',
           difficulty: recipe.difficulty || 'easy'
         });
@@ -149,9 +149,9 @@ const EditRecipePage = () => {
       }
 
       // Format cooking time to include "mins" if only a number is provided
-      let cookTime = formData.cookTime;
-      if (cookTime && !isNaN(cookTime)) {
-        cookTime = `${cookTime} mins`;
+      let cooking_time = formData.cooking_time;
+      if (cooking_time && !isNaN(cooking_time)) {
+        cooking_time = `${cooking_time} mins`;
       }
 
       // Create the recipe data object
@@ -161,7 +161,7 @@ const EditRecipePage = () => {
         ingredients: ingredientsArray,
         steps: stepsArray,
         image_key: image_key,
-        cookTime: cookTime,
+        cooking_time: cooking_time,
         servings: formData.servings,
         difficulty: formData.difficulty
       };
@@ -228,15 +228,15 @@ const EditRecipePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Cooking Time */}
             <div>
-              <label htmlFor="cookTime" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="cooking_time" className="block text-sm font-medium text-gray-700 mb-1">
                 Cooking Time (minutes)*
               </label>
               <input
                 type="number"
-                id="cookTime"
-                name="cookTime"
+                id="cooking_time"
+                name="cooking_time"
                 min="1"
-                value={formData.cookTime}
+                value={formData.cooking_time}
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 required

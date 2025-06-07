@@ -14,7 +14,7 @@ const AddRecipePage = () => {
     ingredients: '',
     steps: '',
     image: null,
-    cookTime: '',
+    cooking_time: '',
     servings: '1-2',
     difficulty: 'easy'
   });
@@ -73,9 +73,9 @@ const AddRecipePage = () => {
       }
 
       // Format cooking time to include "mins" if only a number is provided
-      let cookTime = formData.cookTime;
-      if (cookTime && !isNaN(cookTime)) {
-        cookTime = `${cookTime} mins`;
+      let cooking_time = formData.cooking_time;
+      if (cooking_time && !isNaN(cooking_time)) {
+        cooking_time = `${cooking_time} mins`;
       }
 
       // Create the recipe data object
@@ -85,7 +85,7 @@ const AddRecipePage = () => {
         ingredients: ingredientsArray,
         steps: stepsArray,
         image_key: image_key,
-        cookTime: cookTime,
+        cooking_time: cooking_time,
         servings: formData.servings,
         difficulty: formData.difficulty
       };
@@ -128,15 +128,15 @@ const AddRecipePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Cooking Time */}
             <div>
-              <label htmlFor="cookTime" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="cooking_time" className="block text-sm font-medium text-gray-700 mb-1">
                 Cooking Time (minutes)*
               </label>
               <input
                 type="number"
-                id="cookTime"
-                name="cookTime"
+                id="cooking_time"
+                name="cooking_time"
                 min="1"
-                value={formData.cookTime}
+                value={formData.cooking_time}
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 required
