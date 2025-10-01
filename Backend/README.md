@@ -41,8 +41,8 @@ A Flask API backend for a Recipe Book application with MongoDB database.
    ```
 5. Create a `.env` file with the following contents:
    ```
-   MONGO_URI=mongodb://localhost:27017/recipebook
-   JWT_SECRET_KEY=7500401290a9c6b12c82dcd32773b2036aff2a91e40cca169f0a53c544a13b61
+   MONGO_URI=
+   JWT_SECRET_KEY=
    ```
 6. Install additional test dependencies:
    ```
